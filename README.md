@@ -1,17 +1,44 @@
-# Simple CLI mytodo list using rust
-1. You can check this through command prompt with mytodo --help
-2. Features: Add, List, Done, Remove
+# 🦀 Mytodo - Simple CLI Task Manager
 
-## How to use this through command prompt ?
-1. type in terminal `cargo build --release`
-2. Again with this:
+A simple command-line interface (CLI) application to manage your todo list, built with **Rust**.
+
+![Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)
+![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
+
+## ✨ Features
+* **Add**: Create new tasks easily.
+* **List**: View all your pending and completed tasks.
+* **Done**: Mark tasks as completed.
+* **Remove**: Delete tasks permanently.
+* **Persistent**: Data is saved automatically to `db.json`.
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+Make sure you have Rust and Cargo installed.
+
+### Build form Source
+1.  Clone this repository.
+2.  Build the release version:
+    ```bash
+    cargo build --release
+    ```
+3.  The binary will be available in `./target/release/mytodo`.
+
 ### Linux/macOS
 `./target/release/mytodo --help`
  
 ### Windows (PowerShell)
 `.\target\release\mytodo.exe --help`
 
-3. Make sure you already build release the mytodo application
+---
+
+## 📦 Installation (Add to PATH)
+
+To run `mytodo` from anywhere in your terminal, follow these steps according to your OS.
+
 ### Linux
 ```
 mkdir -p ~/.local/bin
@@ -40,9 +67,13 @@ if ($p -notlike "*$env:USERPROFILE\bin*") {
     [Environment]::SetEnvironmentVariable("Path","$env:USERPROFILE\bin;$p","User")
 }
 ```
-4. Open new terminal and type `where mytodo`
-5. Then you can running mytodo with `mytodo --help`
+## Open new terminal and type 
+`where mytodo`
+## Then you can running mytodo with 
+`mytodo --help`
 
-## Disclamer
+---
+
+# ⚠️ Disclamer
 - My folder name was mytodo, but you can change the name of it. 
 - If you follow my instructions, don't forget to change every "mytodo" name to your folder name
