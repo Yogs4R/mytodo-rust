@@ -3,7 +3,7 @@ mod tasks;
 use tasks::{add_task, list_tasks, mark_done, remove_task, load_tasks, Task};
 
 #[derive(Parser)]
-#[command(name = "Mytodo", version = "1.0", about = "Simple Todo CLI")]
+#[command(name = "Mytodo", version = "1.0", about = "Simple  CLI Todo App")]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
@@ -22,12 +22,10 @@ enum Commands {
 }
 
 fn main() {
-    let cli = Cli::parse();
+    let cli = Cli::parse(); // parsing argumen CLI
     
-    // 1. Load data yang sudah ada (jika ada)
-    let mut tasks: Vec<Task> = load_tasks(); 
+    let mut tasks: Vec<Task> = load_tasks(); // muat tugas
 
-    // 2. Jalankan perintah sesuai input user
     match cli.command {
         Commands::Add { description } => {
             add_task(&mut tasks, description);

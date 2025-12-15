@@ -1,18 +1,18 @@
-use serde::{Serialize, Deserialize};
-use std::fs;
+use serde::{Serialize, Deserialize}; // Serialisasi dan deserialisasi
+use std::fs; // Operasi file
 
-#[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)] // Struktur data untuk tugas
 pub struct Task {
     pub description: String,
     pub done: bool,
 }
 
-fn save_tasks(tasks: &Vec<Task>) {
+fn save_tasks(tasks: &Vec<Task>) { // Simpan tugas ke file
     let json = serde_json::to_string_pretty(tasks).expect("Gagal membuat JSON");
     fs::write("db.json", json).expect("Gagal menulis file db.json");
 }
 
-pub fn load_tasks() -> Vec<Task> {
+pub fn load_tasks() -> Vec<Task> { // Muat tugas dari file
     match fs::read_to_string("db.json") {
         Ok(data) => serde_json::from_str(&data).unwrap_or_else(|_| Vec::new()),
         Err(_) => Vec::new(),
@@ -34,12 +34,12 @@ pub fn list_tasks(tasks: &Vec<Task>) {
         println!("Tidak ada tugas yang tersimpan.");
         return;
     }
-    println!("--- Daftar Tugas ---");
+    println!("=== Daftar Tugas ===");
     for (i, task) in tasks.iter().enumerate() {
         let status = if task.done { "[x]" } else { "[ ]" };
         println!("{} {} - {}", i + 1, status, task.description);
     }
-    println!("--------------------");
+    println!("====================");
 }
 
 pub fn mark_done(tasks: &mut Vec<Task>, id: usize) {
