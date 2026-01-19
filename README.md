@@ -5,6 +5,10 @@ A simple command-line interface (CLI) application to manage your todo list, buil
 ![Rust](https://img.shields.io/badge/Made%20with-Rust-orange?style=flat-square&logo=rust)
 ![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)
 
+## Preview
+
+![CLI Preview](./CLI_CRUD_Rust_Preview.png)
+
 ## ✨ Features
 * **Add**: Create new tasks easily.
 * **List**: View all your pending and completed tasks.
